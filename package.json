@@ -1,6 +1,6 @@
 {
   "name": "@bndl-io/context-providers-provider",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "A React utility component for managing complex context dependencies. Automatically sorts and nests context providers based on dependencies, promoting clean and maintainable context usage patterns.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

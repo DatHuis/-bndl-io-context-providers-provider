@@ -147,6 +147,51 @@ The above setup would result in the following provider tree:
 
 ---
 
+### `createContextProvidersProvider`
+
+A utility function to create a `ContextProvidersProvider` component dynamically.
+
+#### Usage:
+
+```tsx
+import { createContextProvidersProvider } from '@bndl-io/context-providers-provider';
+
+const providers = [
+  {
+    name: 'Auth',
+    C: children => <AuthProvider>{children}</AuthProvider>,
+    dependencies: ['Theme'],
+  },
+  {
+    name: 'Theme',
+    C: children => <ThemeProvider>{children}</ThemeProvider>,
+    dependencies: [],
+  },
+  {
+    name: 'Config',
+    C: children => <ConfigProvider>{children}</ConfigProvider>,
+    dependencies: ['Auth'],
+  },
+];
+
+const ContextWrapper = createContextProvidersProvider({ providers });
+
+const App = () => (
+  <ContextWrapper>
+    <YourApp />
+  </ContextWrapper>
+);
+
+export default App;
+```
+
+#### Description:
+
+- Dynamically creates a `ContextProvidersProvider` wrapper with the given providers.
+- Simplifies reusability by abstracting the setup of the `ContextProvidersProvider`.
+
+---
+
 ## License
 
 MIT License

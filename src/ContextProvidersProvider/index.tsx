@@ -16,9 +16,9 @@ export type ProviderConfig = {
   dependencies: string[];
 };
 
-type ContextProvidersProviderProps = {
+export type ContextProvidersProviderProps = {
   providers: ProviderConfig[];
-  children: ReactNode;
+  children?: ReactNode;
 };
 
 /**
